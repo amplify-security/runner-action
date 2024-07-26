@@ -1,0 +1,23 @@
+= Amplify Runner Action
+
+Github Action to run https://amplify.security[Amplify Security]'s scanner orchestrator.
+
+This action launches a container within your workflow that will authenticate with Amplify's public API, execute code scanners against your changes, and submit scan results to Amplify for generating remediations.
+
+== Usage
+
+For most users, you'll setup this action via the onboarding process when https://app.amplify.security/[signing up at Amplify].
+You can however introduce this to existing workflows.
+A minimal (incomplete) config with the necessary YAML is provided below.
+
+[source,yaml]
+----
+permissions:
+  id-token: write
+
+jobs:
+  amplify-security-scan:
+    steps:
+     - name: Run Amplify Security Scan
+       uses: amplify-security/runner-action@main
+----

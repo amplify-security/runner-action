@@ -1,0 +1,3 @@
+yaml:
+  rules:
+    line-length: disable

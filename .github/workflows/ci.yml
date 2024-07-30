@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   test-action:
@@ -23,3 +24,5 @@ jobs:
       - name: Test Local Action
         id: test-action
         uses: ./
+        with:
+          amplify-endpoint: https://api.lab.amplify.security

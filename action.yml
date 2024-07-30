@@ -5,7 +5,7 @@ description: 'Runs security scanners against code and provides possible remediat
 
 inputs:
   amplify-endpoint:
-    description: URL of Amplify's API to request remediations from.
+    description: "URL of Amplify's API to request remediations from."
     default: 'https://api.amplify.security'
 
 runs:

@@ -6,6 +6,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # run at 17:00 UTC every weekday
+    - cron: "0 17 * * 1,2,3,4,5"
 
 permissions:
   contents: read

@@ -6,14 +6,32 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # run at 17:00 UTC every weekday
+    - cron: "0 17 * * 1,2,3,4,5"
 
 permissions:
   contents: read
   id-token: write
 
 jobs:
-  test-action:
-    name: GitHub Actions Test
+  test-action-lab:
+    name: GitHub Actions Test (Lab)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  # v4.1.7
+
+      - name: Test Local Action (Lab)
+        id: test-action
+        uses: ./
+        with:
+          amplify-endpoint: https://api.lab.amplify.security
+
+  test-action-prod:
+    name: GitHub Actions Test (Prod)
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +40,5 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  # v4.1.7
 
       - name: Test Local Action
-        id: test-action
+        id: test-action-prod
         uses: ./
-        with:
-          amplify-endpoint: https://api.lab.amplify.security

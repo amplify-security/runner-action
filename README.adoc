@@ -1,3 +1,4 @@
+:action-version: 0.1.0
 = Amplify Runner Action
 
 Github Action to run https://amplify.security[Amplify Security]'s scanner orchestrator.
@@ -10,14 +11,21 @@ For most users, you'll setup this action via the onboarding process when https:/
 You can however introduce this to existing workflows.
 A minimal (incomplete) config with the necessary YAML is provided below.
 
-[source,yaml]
+[source,yaml,subs="attributes"]
 ----
+---
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
 permissions:
   id-token: write
 
 jobs:
   amplify-security-scan:
+    runs-on: ubuntu-latest
     steps:
      - name: Run Amplify Security Scan
-       uses: amplify-security/runner-action@main
+       uses: amplify-security/runner-action@v{action-version}
 ----

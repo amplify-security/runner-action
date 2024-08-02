@@ -1,15 +1,18 @@
 ---
-name: 'Amplify Runner Action'
-author: 'Amplify Security'
-description: 'Runs security scanners against code and provides possible remediations automatically.'
+name: "Amplify Runner Action"
+author: "Amplify Security"
+description: "Runs security scanners against code and provides possible remediations automatically."
+branding:
+  icon: "terminal"
+  color: "purple"
 
 inputs:
   amplify-endpoint:
     description: "URL of Amplify's API to request remediations from."
-    default: 'https://api.amplify.security'
+    default: "https://api.amplify.security"
 
 runs:
-  using: 'docker'
-  image: 'docker://amplifysecurity/runner:0.1'
+  using: "docker"
+  image: "docker://amplifysecurity/runner:0.1"
   env:
     AMPLIFY_ENDPOINT: ${{ inputs.amplify-endpoint }}

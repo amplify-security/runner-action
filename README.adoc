@@ -1,7 +1,7 @@
 :action-version: 0.1.0
 = Amplify Runner Action
 
-Github Action to run https://amplify.security[Amplify Security]'s scanner orchestrator.
+Github Action to run https://amplify.security[Amplify Security]'s CI Runner.
 
 This action launches a container within your workflow that will authenticate with Amplify's public API, execute code scanners against your changes, and submit scan results to Amplify for generating remediations.
 
@@ -29,3 +29,8 @@ jobs:
      - name: Run Amplify Security Scan
        uses: amplify-security/runner-action@v{action-version}
 ----
+
+== What is Amplify Security?
+
+Amplify Security is a cloud-native security platform that integrates industry leading security tools
+into your development workflow and provides automtically generated code fixes for security vulnerabilities.

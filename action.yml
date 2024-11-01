@@ -13,6 +13,6 @@ inputs:
 
 runs:
   using: "docker"
-  image: "docker://amplifysecurity/runner:0.1"
+  image: "docker://amplifysecurity/runner:sha-377b844"
   env:
     AMPLIFY_ENDPOINT: ${{ inputs.amplify-endpoint }}

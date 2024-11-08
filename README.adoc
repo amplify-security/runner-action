@@ -1,4 +1,4 @@
-:action-version: 0.1.0
+:action-version: 0.2.0
 = Amplify Runner Action
 
 Github Action to run https://amplify.security[Amplify Security]'s CI Runner.

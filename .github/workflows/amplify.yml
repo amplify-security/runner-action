@@ -4,7 +4,7 @@ on:
   pull_request: {}
   workflow_dispatch: {}
   push:
-    branches: ["master", "main"]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -19,4 +19,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Amplify Runner
-        uses: amplify-security/runner-action@v0.1.0
+        uses: amplify-security/runner-action@v0.2.0

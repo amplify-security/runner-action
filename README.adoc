@@ -24,6 +24,8 @@ permissions:
 
 jobs:
   amplify-security-scan:
+    # name is currently used to properly identify the workflow in Amplify
+    name: Amplify Security Scan
     runs-on: ubuntu-latest
     # external PRs do not have permission to request ID tokens
     if: !github.event.pull_request.head.repo.fork

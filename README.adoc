@@ -1,4 +1,4 @@
-:action-version: 0.2.0
+:action-version: 0.3.0
 = Amplify Runner Action
 
 Github Action to run https://amplify.security[Amplify Security]'s CI Runner.
@@ -24,7 +24,11 @@ permissions:
 
 jobs:
   amplify-security-scan:
+    # name is currently used to properly identify the workflow in Amplify
+    name: Amplify Security Scan
     runs-on: ubuntu-latest
+    # external PRs do not have permission to request ID tokens
+    if: !github.event.pull_request.head.repo.fork
     steps:
      - name: Run Amplify Security Scan
        uses: amplify-security/runner-action@v{action-version}

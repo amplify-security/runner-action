@@ -37,4 +37,4 @@ jobs:
 == What is Amplify Security?
 
 Amplify Security is a cloud-native security platform that integrates industry leading security tools
-into your development workflow and provides automtically generated code fixes for security vulnerabilities.
+into your development workflow and provides automatically generated code fixes for security vulnerabilities.
